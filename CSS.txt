@@ -1,0 +1,92 @@
+		CSS
+CSS é o responsável por dar a forma, estilo.
+CSS (interno, inline e externo).
+Medidas absolutas : pt, px, pc, in, cm, mm
+Medidas relativas : em, ex, rem, vw, vh, %
+
+
+	Modificações possíveis
+background-color     | Cor de fundo
+color 		     | Cor do texto
+font-family 	     | Define a fonte
+font-size 	     | Tamanho do texto
+font-weight 	     | Espessura do texto
+text-align  	     | Alinha o texto (left, center, right, justify)
+text-decoration      | Adiciona sublinhado, risco, etc
+text-transform       | Transforma texto em maiúsculo/minúsculo
+line-height 	     | Espaçamento entre linhas
+width 		     | Largura do elemento
+height 		     | Altura do elemento
+display 	     | Define como o elemento se comporta (block, inline, flex, none)
+border 		     | Cria borda no elemento
+border-style: dotted | Borda pontilhada
+border-style: dashed | Borda tracejada
+border-style: groove | Borda com efeito de relevo
+margin 		     | Espaço externo do elemento
+padding 	     | Espaço interno do elemento
+outline 	     | Contorno fora da borda
+margin: auto 	     | Centraliza o elemento
+box-shadow 	     | Cria sombra no elemento
+:hover 		     | Aplica estilo ao passar o mouse
+::after 	     | Adiciona conteúdo após o elemento
+columns 	     | Divide conteúdo em colunas
+vertical-align 	     | Alinha verticalmente (usado em tabelas)
+
+| div > p {} | modifica apenas a tag selecionada que estiver dentro de div
+
+
+	Shorthand
+Simplificar várias propriedades CSS em uma linha.
+| a{ border-widht:10px; border=style:solid; border-color:red;} | Sem shorthand.
+| a{border:10px solid red} | Com Shorthand, tudo direto.
+ 
+
+	Externo
+Consiste em criar um arquivo .css onde fica separado do HTML.
+Permite reutilizar o mesmo CSS em várias páginas. É a forma correta em projetos reais
+
+| <link rel="stylesheet" href="style.css"> | Liga CSS ao HTML, dentro do head.
+
+| body{color: rgb(255, 255, 255); font-family: sans-serif, Helvetica, Arial} |
+| h1{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;} |
+Três famílias para caso uma não seja compatível
+
+h6{font-size: 20px; color: #0000ff ;}
+#simbolo{color: hsl(240, 100%, 255)} | Para ID
+.mono{color: blue} 		     | Para Class
+
+
+	Inline
+| <body style="color: white"> | Na linha. Color é a propriedade, white o valor.
+
+
+	Interno
+| <style> body{color: white;} </style> | 
+
+				
+	CSS de ID e Class
+| <div id="palavra"> </div> | Divide uma parte da tela q pode ser especificado com comandos
+Deve ser colocado na parte de JS e personalizados em CSS.
+
+| <style> div#palavra {color: white} | Quando class, trocar # por .
+
+
+	Cores
+Pode representar cores no CSS de algumas formas:
+Decimal : 0 1 2 3 4 5 6 7 8 9
+Hexadecial : 0 1 2 3 4 5 6 7 8 9 A B C D E F
+
+| ...color: hsl(240, 100%, 50%) | Hue(matiz), Saturation(saturação), Lightness(luminosidade)
+| ...color: rgb(0, 0, 255)      | Red, green, blue. Cores primárias
+| ...color: #0000ff 	        | Hexadecimal
+| ...color: blue 	        | Nome
+
+
+	Degradê
+| background-image: linear-gradient(to right, black 33%, rgb(34, 14, 14) 33%, red); |
+(Direção, cor X% de ocupação, Xdeg(Xgraus), e formas(circle) );
+
+
+	Links
+| a:visited{} | Quando visitado
+| a:active{}  | Quando ativo
