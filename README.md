@@ -96,4 +96,13 @@ O repositório contém diversos mini-projetos e experimentos, como:
 
 ---
 
+# 👨‍💻 Autor
+
+Desenvolvido por **Jonas Eduardo Campos Martins**
+Estudante de **Ciência da Computação** com foco em desenvolvimento de software.
+
+Este projeto está sob a licença MIT.
+
+---
+
 # 📂 Estrutura do Projeto
