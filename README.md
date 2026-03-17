@@ -1,6 +1,8 @@
 # 🚀 Ultimate HTML, CSS & JavaScript Playground
 
-Este repositório é um **laboratório completo de desenvolvimento Front-end**, onde aplico **tudo que sei e praticamente tudo que existe** em **HTML, CSS e JavaScript**.
+(Repositório em construção)
+
+Este repositório é um **laboratório completo de desenvolvimento Front-end**, onde aplico **tudo que sei** em **HTML, CSS e JavaScript**.
 
 A ideia é experimentar, estudar e implementar **o máximo possível de conceitos, técnicas e APIs do navegador**, criando uma base sólida para desenvolvimento web moderno.
 
@@ -102,7 +104,3 @@ Desenvolvido por **Jonas Eduardo Campos Martins**
 Estudante de **Ciência da Computação** com foco em desenvolvimento de software.
 
 Este projeto está sob a licença MIT.
-
----
-
-# 📂 Estrutura do Projeto
