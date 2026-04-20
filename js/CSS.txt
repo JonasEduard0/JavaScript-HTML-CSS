@@ -1,0 +1,372 @@
+			CSS
+CSS é o responsável por dar a forma, estilo.
+
+
+	Modificações possíveis
+background-color      | Cor de fundo.
+color 		      | Cor do texto.
+text-align  	      | Alinha o texto (left, center, right, justify).
+text-decoration       | Adiciona sublinhado, risco, etc.
+text-transform        | Transforma texto em maiúsculo/minúsculo.
+line-height 	      | Espaçamento entre linhas.
+width 		      | Largura do elemento.
+height 		      | Altura do elemento.
+min/max-height/widht  | Altura minima/maxima que um elemeto pode/deve ter.
+top/left/right/bottom | Distância em relação ao extremo desse lado.
+outline 	      | Contorno fora da borda.
+display: flow-root;   | Img não fica fora da borda do body.
+columns 	      | Divide conteúdo em colunas.
+vertical-align 	      | Alinha verticalmente (usado em tabelas).
+clear:both/left/right | Impedi elementos flutuarem ao lado de elementos que usaram float.
+box-sizing:border-box | Faz width ser tam final,impede q padding e borda aumente o elemento.
+margin/direcao/:auto  | Contorno externo do elemento,em direção especifica ou auto centraliza
+padding 	      | Espaço interno entre elemento e a borda.
+float: direcao	      | Permite elemento ao lado de imagem sem ela ocupar toda linha.
+cursor: xx;	      | Vide os vários tipos de cursores.
+
+font-family/size/weight/style | Define fonte/tamanho do texto/espessura.
+
+
+	Medidas
+Absolutas: pt, px, pc, in, cm, mm. Não mudam dependendo do contexto.
+  Px: mais usada. Para bordas, sombras e pequenos ajustes.
+  Cm, mm e in: Quase nunca usadas. Apenas impressão (print CSS).
+
+Relativas à Fonte: em, rem, ex, ch. Mudam dependendo da fonte.
+  rem: Relativo ao tamanho da fonte do html. Se html tem 16px, 2em=32px. Fontes, padd,margin.
+
+Relativas à Tela(Viewport): vw, vh, %, dvh, dvw, svh, lvh. Baseadas no tamanho da tela.
+  vw, vh: 1vw/h = 1% da largura/altura da tela.
+  dvh, dvw, svh, lvh: Criados para corrigir problemas de barra do navegador em celular.
+
+Relativas ao Container: %, cqw, cqh, cqi, cqb. Baseado no tamanho do elemento pai.
+
+
+	Variáveis
+:root | É o seletor do elemento <html>. Cria variáveis globais nele com '--XXX: XX'.
+Variáveis locais dentro das tags.
+
+:root { --pretinho: rgb(27, 27, 27); --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+       --cor-borda: var(--pretinho); }
+body{ --corlocal: rgb(29, 27, 27); background-color: var(--corlocal); }
+
+
+	Responsivo
+Adaptar o layout de acordo com a tela do usuário. Celulares, tablets, etc.
+Optar sempre por usar %, vh, vw em width, height, img e container ao invés de px.
+Usar rem ao invés de px para textos.
+| orientation: landscape) | Quando tela deitada nos dispositivos móveis.
+
+@media (min-width: 100px) and (max-width: 320px){
+  .boxs{ width: 25px; height: 20vh; font-size: 3em; border-radius: 20%; } }
+
+@media (orientation: landscape){    
+  .containers{ height: 100px; }
+
+
+	Border
+Há muitas mudanças possíveis. | border: Xcm solid red; |
+
+border-style:dotted/dashed/groove/solid/double/ridge/inset/outset
+border-bottom/-top/-left/-right: ...
+
+
+	Shorthand
+Simplificar várias propriedades CSS em uma linha.
+
+| a{ border-widht:10px;border=style:solid;border-color:red;}
+| a{ border: 10px solid red} | Com Shorthand, tudo direto.
+
+
+	Externo
+Consiste em criar um arquivo .css onde fica separado do HTML.
+Permite reutilizar o mesmo CSS em várias páginas. É a forma correta em projetos reais.
+
+<link rel="stylesheet" href="style.css">   | Liga CSS ao HTML, dentro do head.
+
+body{ font-family: sans, Helvetica, Arial} | 3 caso uma ñ seja compatível
+
+	Inline
+| <body style="color: white"> | Na linha. Color é a propriedade, white o valor.
+
+	Interno
+| <style> body{color: white;} </style> |
+
+
+	Div`s e Container
+Acessa class com '.' e id com '#'. Container são div`s q possuem outras div`s.
+
+<div id="palavra" class="texto"> </div> | Divide uma parte da tela q pode ser estilizado.
+#palavra(.texto) {...}
+
+
+	Combinators
+Explicam a relação entre seletores. Dizem quem afeta quem.
+
+| #container p   | Todo p que está em dentro de container.
+| #container > p | Apenas os p que estão imediatamente dentro de container e ñ +profundo.
+| #container ~ p | Todo p que seja irmão do container e venha depois dele.
+| #container + p | O primeiro p imediatamente após o container.
+
+
+	Cores
+Pode representar cores no CSS de várias formas. Há a opção de transparência tambem.
+Decimal : 0 1 2 3 4 5 6 7 8 9
+Hexadecial : 0 1 2 3 4 5 6 7 8 9 A B C D E F
+
+| ...color: hsl(240, 100%, 50%) | Hue(matiz), Saturation(saturação), Lightness(luminosidade).
+| ...color: rgb(0, 0, 255)      | Red, green, blue. Cores primárias.
+| ...color: #0000ff 	        | Hexadecimal.
+| ...color: blue 	        | Nome.
+
+
+	Fontes
+É possível extrair fontes diferentes do googlefonts.com e usa-las com link ou baixar.
+
+| <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="linkdafonte rel="stylesheet"> 
+  ...font-family: NomeDaFonte; |
+
+| @font-face{
+    src: url(OswaldVariableFont.ttf); | Chama a fonte na msm pasta e nomeia ela.
+    font-family: Oswald; } |
+
+
+	Sombras
+text-shadow: 5px 5px 5px red, 5px 5px 5px red; | Horizontal Vertical Blur Cor, Outra sombra.
+
+| <div id="caixa"></div>
+  ...#caixa{ width: 100px; height: 100px; background-color: rgb(58, 51, 51); 
+             box-shadow: 2px 2px 3px red; } | Efeito 3D em uma caixa.
+
+
+	Overflow
+Texto pode não caber em uma div, usa-se a propriedade:
+
+overflow: atributo; | scroll(scrolar), auto(scroll ou sem nada), hidden(n mostra)
+
+overflow: clip;		    |
+overflow-clip-margin: 99px; | Mostra fora da div na quantidade especificada.
+
+
+	Display
+Propriedade especifica se/como um elemento é mostrado.
+Block-level: Começa em uma linha nova e ocupa tudo, ex: h1, div, p, form, header, footer.
+Inline: Não começa numa linha nova e ocupa o necessário, ex: span, a, img.
+
+#block{
+    background-color:blue;
+    width: 10%;            | Tem q especificar tamanho pra nn ocupar toda linha.
+    display: block; 	   | Transforma em block-level, se já ñ fosse.
+    display: inline; 	   | Transforma em inline.
+    display: none; } 	   | Fica invisível e ñ ocupa espaço.
+#inline{
+    background-color: #3ddd45;
+    width: 10%; 	      | Ñ funciona pois inline ocupa apenas o necessário.
+    display: inline-block;    | Mistura, ocupa apenas o necessário do tamanho especificado.
+    height: 50px;
+    visibility: hidden; }     | Fica invisível.
+
+
+	Posição
+position: atributo; | relative: elemento se move em relação á posição inicial.
+top: 25px;	    | fixed: fica fixo nessa posição mesmo scrolando.
+left: 12px;	    | absolute: uma div q está dentro de outra se move junto com o pai.
+right: 10px	    | sticky: como fixed, mas scrolar pra baixo faz ele subir um pouquinho.
+bottom:	10px	    | static: default.
+
+
+	Degradê
+| background-image: linear-gradient(to right, black 10%, rgb(34, 14, 14) 33%, red); |
+(Direção, cor X% de ocupação, Xdeg(Xgraus), e formas(circle) );
+
+
+	Pseudo-classes e pseudo-elementos
+Pseudo-classe modifica um elemento quando em certo estado, Pseudo-elemento modifica algo em específico. Pseudo-classe com ':'. Pseudo-elemento com '::'
+A ordem de precedência importa, .dropdown:hover .conteudo != .dropdown .conteudo:hover
+
+:not(:hover/active/etc) | Enquanto não estiver nesta condição.
+
+button:hover{comando;} | Passar mouse em cima.
+      :active 	       | Estiver sendo clicado.
+
+a:link{}	       | Modifica um link antes de clicar.
+ :visited	       | Quando já visitado.
+
+li:nth-child(2n+1){}   | Seleciona elemento pela posição q ocupam dentro do pai.even,odd,2...
+
+#container p{ display: none; }	       |
+#container:hover p{ display: inline; } | Fazem um texto invisivel aparecer quando houver.
+
+h1/p...::first-letter{} | Altera primeira letra.
+       ::first-line{}	| Primeira linha.
+       ::selection{}    | Quando estiver com o texto selecionado.
+       
+h1/p...::before{content: "emoji, texto,etc";} | Antes do conteudo ser exibido, adiciona algo.
+       ::after{content: "🥬";}				  | Na frente do conteúdo.
+
+li::marker{ content: "📝"; }  				  | Em listas, altera o marcador dos <li>.
+
+
+	Paginação
+Conjunto de links que levam para páginas diferentes e destacam a página atual.
+
+<div class="paginacao">
+ <a href="index.html"><</a> 	      | Como estamos na 1ª, recarrega pág ou passa pra última
+ <a href="index.html" class="paginatual"> 1 </a>
+ <a href="pagina2.html"> 2 </a>       | Quando fazer a proxima pagina, altera paginatual.
+ <a href="pagina3.html"> 3 </a>
+ <a href="pagina2.html"> > </a>       | Muda quando estiver na outra pagina.
+</div>
+
+.paginacao  { text-align: center; }
+.paginacao a{ color: black; padding: 10px; display: inline-block;
+    text-decoration: none; 		| Tira sublinhado de links.
+    margin: 20px; } 	   		| Distância entre os links.
+
+| "Acesse div classe paginacao, depois o link a classe "paginatual". |
+.paginacao a.paginatual{ 
+    background-color: green; font-weight: bolder; border-radius: 20%; }
+
+| Modifique quando passar em cima menos o paginatual. |
+.paginacao a:hover:not(.paginatual) { background-color: #222217; border-radius: 20%; }
+
+
+	Menu Dropdown
+Quando hoveamos e aparecem opções para selecionar.
+'.dropdown .conteudo:hover' é diferente de '.dropdown:hover .conteudo', pois hover é no botão, ñ conteudo.
+
+<div class="dropdown">
+  <button>Comida</button>
+  <div class="conteudo">
+    <a href="" id="maca">Maca</a>
+    <a href="" id="banana">Banana</a></div></div>
+
+.dropdown{ width: 70px; }
+
+.dropdown button{ background-color: rgb(158, 158, 158); color: white; padding: 10px 15px; border: none; cursor: pointer; }   | Por enquanto, puxa o texto pra baixo
+
+.dropdown a{display: block;color: #000000;text-decoration: none;padding: 10px 15px; }
+
+.dropdown .conteudo{display: none; position: absolute;background-color: hsla(0,0%,100%,0.95);
+  box-shadow: 2px 2px 4px hsla(0, 0%, 0%, 0.8); }
+
+.dropdown:hover .conteudo{ display: block; }
+.dropdown:hover button{ background-color: #222217; }
+.dropdown a:hover{ background-color: #808080; }
+
+
+	Barra de navegação
+Menus ficam do lado do outro, mas pode causar Div entrando em outra (float:left;), resolve com overflow: hidden;
+
+<nav class="navbar"> <ul>
+  <li><a href="index.html"> Home </a> </li>
+  <li><a href="about.hmtl"> Sobre </a> </li>
+  <li><a href="products.html"> Produtos </a> </li>
+  <li><a href="contact.hmtl"> Contato </a> </li> </ul> </nav>
+
+.navbar ul{ list-style-type: none;background-color: hsl(0, 0%, 25%);padding: 0px;margin: 0px;
+    overflow: hidden; }
+.navbar a{color: white; text-decoration: none; padding: 15px; display: block; }
+.navbar a:hover{ background-color: hsl(0, 0%, 10%); }
+.navbar li{ float: left; }
+
+
+	Galeria
+Mostrar imagens clicáveis onde aumentam ou enviam para algo.
+Para centralizar as imagens, envolve num container e dá 'text-align: center;'.
+
+<div class = "galeria">
+ <a href = "download.png"> <img src = "download.png" alt = "hotdog"> </a>
+ <div class = "descricao"> Hotdog </div> </div>
+<div class = "galeria">
+ <a href = "download.png"> <img src = "download.png" alt = "cachorroquente"> </a>
+ <div class = "descricao"> Cachorro-quente </div> </div>
+
+.galeria{ width: 200px; display: inline-block; margin: 15px; border: black 1px solid; }
+.galeria img{ width: 100%; }
+.galeria .descricao{ text-align: center; padding: 7px; }
+.galeria:hover{ background-color: grey; border-color: grey; }
+
+
+	Icons
+Site para conseguir icons: fontawesome.
+Normalmente, a class de icoms vêm com espaço, substitui no css com '.' .
+
+<div class="icons"> 
+ <a href="index.html"> <i class="fa-solid fa-house fa-2x"> </i> </a>
+ <a href="https://x.com/"> <i class="fa-brands fa-x-twitter fa-2x"> </i> </a> </div>
+
+.icons { text-align: center; }
+.icons a { text-decoration: none; margin-right: 20px; }
+
+.fa-solid.fa-house.fa-2x:hover{ color: hsl(0, 0%, 100%); }
+.fa-solid.fa-house.fa-2x{ color: grey; }
+
+
+	Flexbox
+display: flex;         	      | Transforma em Flexible Box, permite modificações de flexbox.
+flex-direction: row;   	      | row-reverse(ao contrario), column(coluna), column-reverse.
+flex-wrap: wrap/wrap-reverse; | Se em tela menor ficarem apertados, desce a linha.
+flex-flow: row wrap; 	      | Shorthand de direction e wrap.
+flex-basis: 200px; 	      | O tamanho inicial do item flex no eixo principal.
+flex-shrink: 1; 	      | Se pode encolher.
+flex-grow: 0;   	      | Se pode crescer, 0 = não.
+justify-content: center;      | flex-end, space-around/between. Muda horizontalmente.
+gap: 20px; 		      | Espaço entre os itens.
+align-items: center; 	      | Alinha itens, flex-end e flex-start.
+align-content: center; 	      | Com flex-wrap. Diz como se comporta ao quebrar linha.
+align-self: flex-end; 	      | Alinha apenas um especifico, se não tivesse wrap.
+order: 1; 		      | Ocupa o último lugar. -1: ocupa o primeiro.
+
+<div class="container">
+ <div class="boxs" id="box1"> 1 </div>
+ <div class="boxs" id="box2"> 2 </div>
+ <div class="boxs" id="box3"> 3 </div>
+ <div class="boxs" id="box4"> 4 </div> </div>
+
+.containers{ display: flex; flex-direction: row; justify-content: center; gap: 20px; 
+     column-gap:3em; height:30vh; align-items:center; flex-wrap:wrap; align-content:center; }
+
+.boxs{ width: Xpx; height: Xpx; color: black; font-size: Xem; text-align: center; 
+       border-radius: Xpx; flex-basis: 200px; flex-grow: 0; flex-shrink: 1; }
+#boxs1{ background-color: red; align-self: flex-end; order: 1; }
+#boxs2{ background-color: green; order: -1; }
+
+
+	Transformações
+Permite rotacionar, scalar, traduzir ou inclinar.
+
+translateX(250px);     	  | Move eixo X.
+translateY(100%);      	  | Move eixo Y.
+translate(50px, -8px);	  | Move em ambos, - para lado contrario.
+rotateY(180deg);      	  | Rotaciona de um lado pro outro.
+rotateX(180deg);      	  | Rotaciona de cima pra baixo.
+rotateZ(45deg);       	  | Gira.
+rotate3d(1, 1, 0, 45deg); | Rotaciona nos três.
+skew(10deg, 10deg);       | Distorce.
+scale(1, 0.5);            | Estica ou comprime.
+
+#boxz1{ width: 250px; height: 250px; border: 5px solid; font-size: 13em; text-align: center;
+      transform: translate(50px, -8px) rotateY(180deg) rotateX(180deg) rotateZ(45deg) scale(1, 0.4) skew(10deg, 10deg); }
+
+
+	Animações
+from 	| Termina a animação na posição inicial.
+to   	| Começa da posição inicial e termina onde desejar.
+0%-100% | Quando estiver nessa %, anima algo.
+
+animation-name: X; 	      | Nome da animação q este elemento terá.
+animation-duration: Xs;       | Tempo de duração da animação. 
+animation-iteration-count: X; | Quantas vezes acontece, qual numero >2 ou infinito. 
+animation-direction: direcao; | Direção da animação. alternate, reverse, normal.
+animation-play-state: paused; | Pausado ou funcionando.
+animation-timing-function: X; | Velocidade da animação. steps(), linear.
+
+#boxc{ animation: slideEsq 2s 4 alternate-reverse steps(10); }
+
+@keyframes slideEsq { from { transform: translateX(300%); } }
+@keyframes slideDir { to { transform: translateY(300%); } }
+@keyframes rotacionaCima { 70%{ transform: rotateZ(180deg);}} | Se <100, rebobina a animação.
+@keyframes trocaCor{ 0%{background-color: red;} 100%{background-color: purple; } }

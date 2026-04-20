@@ -1,0 +1,542 @@
+@charset "UTF-8"; /* Permite acento e emoji. Se já tem no html, ñ precisa pôr. */
+
+@font-face{ /* Nomeia a fonte baixada */
+    src: url(Oswald-VariableFont_wght.ttf);
+    font-family:Oswald;
+}
+
+* { /* Seletor universal do CSS, altera todas tags. */
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0;
+} /* Evita bugs de layout. */
+
+:root { /* É o seletor do elemento <html>. Cria variáveis globais com '--'. */
+    --pretinho: rgb(27, 27, 27);
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --cor-borda: var(--pretinho);
+}
+
+body{
+    margin: 0px; /* Contorno pequeno em torno do site */
+ /* background-image: url(download.png); Imagem de fundo */
+    border: 3px solid;
+    border-color: var(--pretinho); /* Usa variavel com 'var(--XXX)' */
+    display: flow-root; /* Img não fica fora da borda do body */
+
+    background-image: linear-gradient(to right, black 10%, rgb(34, 14, 14) 33%, rgb(100, 0, 0));
+    /* Degradê */
+
+/*  background-image: url(download.png); adiciona img de background
+    background-repeat: no-repeat; se img ñ cobrir toda tela, fica se repetindo, isso ñ permite
+    background-position: center;         posiciona no centro
+    background-attachment: fixed;        fixo na tela ou se move com o scroll
+    background-size: cover;              estica a tela pra cobrir toda  */
+}
+
+
+.Lista{
+    margin: 20px;
+}
+
+footer{
+    --corlocal: rgb(29, 27, 27);
+    background-color: var(--corlocal); /* Variável local. */
+}
+
+#p1{ /* ID é uma tag especifica. Acessa com '#' */
+    color: #87d3d3;
+    font-family: Oswald;
+}
+
+.h{ /* Class é um conjunto de tags q escolhemos, tem o mesmo nome . Acessa com '.' */
+    color: hsl(145, 71%, 73%);
+}
+
+h1{
+    text-shadow: 5px 5px 5px red, -5px -5px 5px yellow;
+}
+
+footer form{
+    font-family: "Playwrite NZ Basic", cursive;
+    font-size: small;
+}
+
+main table{
+    border: dotted 5px red; /* Shorthand: varias atributos de uma vez */
+    border-bottom: 2px groove blue;
+}
+
+
+#caixa0{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(58, 51, 51);
+    box-shadow: 2px 2px 3px rgb(153, 133, 133); /* Efeito 3D numa caixa */
+}
+
+
+#caixa1{
+    background-color: blue;
+    margin: auto; /* Vai pro centro da tela */
+}
+
+#caixa2{
+    background-color: red;
+    margin-left: 50px; /* Todas direções em margin */
+}
+
+
+.caixa{
+    border: 5px solid rgb(51, 36, 36);
+    height: 150px;
+    width: 150px;
+}
+
+#img0{
+    float: left;
+    margin-right: 10px;
+}
+
+
+#divtxt{
+    border: 2px solid;
+    height: 50px;
+    overflow: auto;  /* Trata texto saindo de div`s. auto, hidden, scroll */
+    /*overflow: clip;             Usados em conjunto, define o tanto q pode passar da div.
+    overflow-clip-margin: 10px;*/ 
+}
+
+
+#block{                      /* Div, h1, p, form são block-level: ocupa toda linha para si. */
+    background-color:blue;
+    width: 10%;             /* Especificar o tamanho pra nn ocupar toda linha */
+    /* display: block; já é block, ent ñ muda */
+    display: inline; /* Agora ocupa o necessário */
+    /* display: none; Fica invisível e ñ ocupa espaço */ 
+}
+
+#inline{ /* span, a, img são inline: ocupa o necessário. */
+    background-color: #2f9734;
+    color: white;
+    /* width: 10%; ñ funciona pois ocupa apenas o necessário */
+    /* display: inline; já é inline, ent ñ muda */
+    display: inline-block; /* Mistura, ocupa apenas o necessário do tamanho especificado */
+    height: 50px;
+    /* visibility: hidden; Fica invisível */
+}
+
+
+.caxona{
+    border: 2px solid grey;
+    background-color: rgb(32, 30, 30);
+    /* height: auto; É o padrão, ocupa todo espaço pra exibir o conteúdo */
+    padding: 10px;          /* Distância do conteudo pra borda */
+    /* box-sizing: border-box; Inclui borda e padding dentro da width sem aumentar +24px */
+    width: 50%;             /* Div ocupa 50% da tela,mas com a borda e padding aumenta 24px */
+    float: left;            /* Permite elementos ao lado */
+    text-align: center;
+    position: relative; /* Se move em relação á posição inicial */
+    top: 1px;
+}
+.caxona-container::after{ /* Adicione limpeza após caixa, pois pode invador abaixo */
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#caixafora{
+    width: 200px;
+    height: 200px;
+    background-color: #87d3d3;
+    position: relative;
+}
+
+#caixadentro{
+    width: 100px;
+    height: 100px;
+    background-color: #3ddd45;
+    position: absolute;
+}
+
+
+#container{
+    border: 2px solid rgb(255, 238, 0);
+    display: inline-block;
+}
+#container p{ /* Todos p dentro de container, "filhos e sobrinhos" */
+    background-color: #676830;
+}
+#container > p{ /* Apenas filhos diretos */
+    color:#bd8532 ;
+}
+/*#container ~ p{
+    background-color: #8a6328;
+    display: inline;
+}*/
+#container + p{
+    color: rgb(0, 255, 170);
+}
+
+
+table{
+    position: relative;
+    border-collapse: collapse;  /* Remove espaço entre bordas das células */
+}
+thead > tr > th{
+    position: sticky; /* Gruda os títulos no topo enquanto rola a tabela */
+    top: 0;
+    background-color: black;
+}
+th{
+    text-align: center;
+}
+td, tr, th{
+    vertical-align: auto; /* top, middle, bottom. Para tabelas. Alinha o conteúdo */
+    border: 1px solid white;
+    padding: 6px;
+}
+.cpais{
+    background-color: rgb(39, 39, 39); /* Primeira coluna fica vermelha */
+}
+.cestado{
+    background-color: rgb(58, 58, 58);
+}
+.cgrupo{
+    background-color: rgb(68, 68, 68);
+}
+
+
+#botao:hover{/*Pseudo-classe ':'.Executa quando condição acontecer, no caso 'mouse em cima'*/
+    background-color: #3ddd45;
+    font-size: larger;
+}
+#botao:active{ /* active: estiver sendo clicado */
+    font-size: 0.1em;
+}
+
+
+body > a:link{      /* Muda o link */
+    font-size: larger;
+}
+body > a:visited{   /* Quando já visitado */
+    color: white;
+}
+
+
+.Lista .LI:hover{
+    background-color: #676830;
+}
+.Lista .LI:not(:hover){ /* Quando not hover */
+    background-color: #222217;
+}
+.Lista .LI:nth-child(2n+1){/*Seleciona elemento pela posição q ocupam dentro do pai.even,odd,2,2n+1*/
+    color: #8a8fdd;
+}
+
+#container pre{ 
+    display: none;
+}
+#container:hover pre{ /* O texto em pre so aparece com mouse em cima */
+    display: inline;
+}
+
+
+h1::first-letter{ /* Pseudo-elemento '::'. Primeira letra alterada */
+    font-size: 2em;
+}
+
+#paragrafo::first-line{ /* Primeira linha alterada */
+    background-color: rgb(66, 38, 38);
+}
+#paragrafo::selection{ /* Quando estiver com o texto selecionado */
+    color: #2f9734;
+    background-color: #222217;
+}
+
+#alface::before{ /* Antes do conteudo. Ou #idDoPai li::alteraçao para alterar filhos*/
+    content: "(●'◡'●)"; /* Adiciona o conteudo */
+}
+#alface::after{ /* Depois do conteudo */
+    content: "🥬";
+}
+#alface::marker{ /* Em listas, altera o marcador dos <li> */
+    content: "📝";
+}
+
+
+.paginacao{
+    text-align: center;
+}
+
+.paginacao a{ /* Todo a dentro de paginacao */
+    color: rgb(255, 255, 255);
+    text-decoration: none; /* Tira sublinhado de links */
+    margin: 20px; /* Distancia entre os links, ja q distancia da borda da div */
+    padding: 10px;
+    display: inline-block;
+}
+.paginacao a.paginatual{ /*"Acesse div classe paginacao, depois o link a classe "paginatual"*/
+    background-color: #3ddd45;
+    font-weight: bolder;
+    border-radius: 20%;
+}
+.paginacao a:hover:not(.paginatual) { /*Modifique quando passar em cima menos o paginatual*/
+    background-color: #222217;
+    border-radius: 20%;
+}
+
+
+.dropdown{
+    width: 70px;
+}
+.dropdown button{
+    background-color: rgb(158, 158, 158);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown a{
+    display: block;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 15px; /* Por enquanto, o dropdown puxa o texto pra baixo */
+}
+.dropdown .conteudo{
+    display: none;
+    position: absolute; /* Para texto ñ ser abaixado */
+    background-color: hsla(0, 0%, 100%, 0.95); /* Há opção de opacidade */
+    box-shadow: 2px 2px 4px hsla(0, 0%, 0%, 0.8);
+}
+.dropdown:hover .conteudo{ /*!= .dropdown .conteudo:hover, pois hover é no botão, ñ conteudo*/
+    display: block;
+}
+.dropdown:hover button{
+    background-color: #222217;
+}
+.dropdown a:hover{
+    background-color: #808080;
+}
+
+
+.navbar ul{
+    list-style-type: none; /* Type, simbolo marcador da lista */
+    /*list-style-position: inside;  Marcador fica dentro da div */
+    background-color: hsl(0, 0%, 25%);
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden; /* Nesse contexto, ñ permite bugar div */
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+}
+.navbar a:hover{
+    background-color: hsl(0, 0%, 10%);
+}
+.navbar li{
+    float: left; /* Menus ficam do lado do outro, mas pode causar Div entrando em outra */
+}
+
+
+.galeria{ /* Para centralizar, envolve num container e dá 'text-align: center;' */
+    width: 200px;
+    display: inline-block;
+    margin: 15px;
+    border: rgb(255, 255, 255) 1px solid;
+}
+.galeria img{
+    width: 100%;
+}
+.galeria .descricao{
+    text-align: center;
+    padding: 7px;
+}
+.galeria:hover{
+    background-color: rgb(80, 80, 80);
+    border-color: rgb(187, 187, 187);
+}
+
+
+.icons{
+    text-align: center;
+}
+.icons a{
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.fa-solid.fa-house.fa-2x:hover{
+    color: hsl(0, 0%, 100%);
+}
+.fa-solid.fa-house.fa-2x{ /* Se espaço em class, põe '.' */
+    color: grey;
+}
+
+
+.containers{
+    display: flex; /* Transforma em Flexible Box, permite modificações de flexbox */
+
+ /* flex-direction: row;  row-reverse(ao contrario),column,column-reverse(coluna contrario)
+    flex-wrap: wrap;      Se em tela menor ficarem espremidos, desce a linha. wrap-reverse */
+    flex-flow: row wrap; /* Shorthand desses 2. */
+
+    justify-content: center;/* flex-end, space-around/between. Isso muda horizontal/x/eixo principal */
+    gap: 20px; /* Espaço entre os itens */
+    column-gap: 3em;
+    border: 5px solid red;
+    height: 20vh; /* Aumenta tam da div pra poder mexer vertical/y */
+    align-items: center; /* flex-end/start */
+    align-content: center; /* Com flex-wrap. Diz como se comporta ao quebrar linha. */
+}
+.boxs{
+    height: 150px;
+    color: black;
+    font-size: 8em;
+    text-align: center;
+    border-radius: 15px;
+    flex-basis: 200px; /* O tamanho inicial do item flex no eixo principal. */
+    flex-shrink: 1;    /* Se pode encolher. Número determina o quanto. */
+    flex-grow: 0;      /* Define quanto o item pode crescer quando sobra espaço. */
+}
+#boxs1 {
+    background-color: hsl(0, 100%, 70%);
+    align-self: flex-end; /* Alinha só esse */
+    order: 1; /* Ocupa o ultimo lugar */
+}
+#boxs2 {
+    background-color: hsl(51, 100%, 70%);
+}
+#boxs3 {
+    background-color: hsl(110, 100%, 70%);
+    order: -1; /* Ocupa o primeiro lugar */
+}
+#boxs4 {
+    background-color: hsl(204, 100%, 70%);
+}
+
+
+#boxz1 {
+    color: #535353;
+    width: 250px;
+    height: 250px;
+    border: 5px solid;
+    font-size: 13em;
+    text-align: center;
+    background-color: greenyellow;
+
+ /* transform: translateX(250px);     Move eixo X.
+    transform: translateY(100%);      Move eixo Y. %: em relação ao tam do elemento.
+    transform: translate(50px, -8px); Move em ambos, - para lado contrario.
+    transform: rotateY(180deg);       Rotaciona de um lado pro outro.
+    transform: rotateX(180deg);       Rotaciona de cima pra baixo.
+    transform: rotateZ(45deg);        Gira
+    transform: rotate3d(1, 1, 0, 45deg); 
+    transform: skew(10deg, 10deg);          Distorce.
+    transform: scale(1, 0.5);         Estica ou comprime */
+
+    transform: translate(50px, -8px) rotateY(180deg) rotateX(180deg) rotateZ(45deg) scale(1, 0.4) skew(10deg, 10deg);
+}
+
+
+#boxc{
+    width: 250px;
+    height: 250px;
+    background-color: red;
+    font-size: 13em;
+    text-align: center;
+
+ /* animation-name: slideEsq;             Nome da animação q este elemento terá.
+    animation-duration: 2s;               Tempo de duração da animação. 
+    animation-iteration-count: 3;         Quantas vezes acontece, qual numero >2 ou infinito. 
+    animation-direction: alternate-reverse; Direcao da animação
+    animation-play-state: paused;           Pausado ou funcionando
+    animation-timing-function: ease-in-out; Velocidade da animação. steps(), linear. */
+    
+    animation: slideEsq 2s 4 alternate-reverse steps(10);
+}
+
+@keyframes slideEsq { /* Cria animação com esse nome */
+    from{transform: translateX(300%);}
+}
+@keyframes slideDir {
+    to{transform: translateY(300%);}
+}
+@keyframes rotacionaCima {
+    70%{transform: rotateZ(180deg);} /* Se <100, rebobina a animação. */
+}
+@keyframes crescer{
+    50%{transform: scale(1.1,1.1)}
+}
+@keyframes fade{ 
+    10%{opacity: 10%;}
+}
+@keyframes trocaCor{
+    0%{background-color: red;}
+    20%{background-color: blue;}
+    40%{background-color: green;}
+    60%{background-color: yellow;}
+    80%{background-color: orange;}
+    100%{background-color: purple;}
+}
+
+#boxc:hover{
+    animation: glow 5s;
+}
+@keyframes glow{
+    50% { box-shadow: 20px 10px 50px red; }
+}
+
+
+.gridcontainer {
+    display: grid;
+    gap: 10px;
+    place-items: center center;         /* Shorthand para align/justify-items        */
+    place-content: space-around center; /* Shorthand para align/justify-content      */
+    grid-template: 50px 50px / 1fr 1fr; /* Shorthand para grid-template-rows/columns */
+    grid-auto-rows: 50px;               /*Nova linha ou elemento deslocado terá este tamanho*/
+    grid-auto-columns: 50px;           /*Nova coluna ou elemento deslocado terá este tamanho*/
+    grid-auto-flow: row; /**/
+    border: 9px solid #4b3c3c;
+}
+
+.griditem {
+    border: 1px solid #2f9734;
+    padding: 5px;
+}
+#item1{
+    grid-area: 1 1 -1 span 1;
+    background-color: #3ddd45;
+}
+
+
+@media (max-width: 759px) { /* Responsivo, se adapta ao tamanho da tela do usuário. */
+    .boxs{
+        width: 100px;
+    }
+    .containers{
+        height: 30vh;
+    }
+}
+@media (min-width: 100px) and (max-width: 320px){
+    .boxs{
+        width: 25px;
+        height: 60px;
+        font-size: 3em;
+        border-radius: 20%;
+    }
+    .containers{
+        height: 20vh;
+    }
+}
+/* @media (orientation: landscape){  Quando tela deitada nos dispositivos móveis. 
+    .containers{
+        height: 100px;
+        background-color: #2f9734;
+    }
+} */
+
+
