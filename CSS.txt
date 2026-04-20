@@ -306,6 +306,8 @@ Normalmente, a class de icoms vêm com espaço, substitui no css com '.' .
 
 
 	Flexbox
+Uma maneira de organizar o layout. Unidimencional: escolhe entre linha ou coluna.
+
 display: flex;         	      | Transforma em Flexible Box, permite modificações de flexbox.
 flex-direction: row;   	      | row-reverse(ao contrario), column(coluna), column-reverse.
 flex-wrap: wrap/wrap-reverse; | Se em tela menor ficarem apertados, desce a linha.
@@ -370,3 +372,48 @@ animation-timing-function: X; | Velocidade da animação. steps(), linear.
 @keyframes slideDir { to { transform: translateY(300%); } }
 @keyframes rotacionaCima { 70%{ transform: rotateZ(180deg);}} | Se <100, rebobina a animação.
 @keyframes trocaCor{ 0%{background-color: red;} 100%{background-color: purple; } }
+
+
+	Grid
+Grades, uma alternativa de organização do layout ao flexbox. Importante envolver em container.
+Usar a ferramenta do grid view no 'inspecionar elemento'.
+
+grid container : Container que envolve o grid, display:grid nele.
+grid content   : O conteúdo completo, cada bloco dentro do container.
+grid item      : O item dentro de cada grid content.
+grid track     : Fileira(row track) ou coluna(column) de grid itens.
+grid lines     : Linhas entre os itens. Cada linha tem um número de 1 a n, ou o último pode ser -1 a -n.
+grid area      : Conjunto de itens próximos.
+
+: repeat(X, auto); | Valores repetidos podem ser resumidos, (3, 1fr) = 1fr 1fr 1fr.
+: 1fr 2fr 1fr;	   | Medida fracionária, divide em frações a tela. 1fr 2fr(dobro da anterior).
+space-		   | Controlam como o espaço extra é distribuído entre linhas e colunas dentro do container.
+: space-between;   | Primeiro item encosta no início, último item encosta no final.
+: space-around;    | Cada item recebe espaço nas duas laterais, entre itens é maior que nas extremidades.
+: space-evenly;    | Distribui o espaço igualmente entre tudo, inclusive bordas.
+span x; 	   | Quantos grid lines além da inicial deve espandir até o fim
+
+	Propriedades apenas para Grid-container
+display: grid;       		    | Possibilita usar o layout grid.
+gap: Xpx;	     		    | Altera apenas o espaçamento entre os itens(grid lines).
+grid-template-columns: auto auto... | Separa conteúdo em n colunas, de acordo com o número de parâmetros.
+grid-template-rows: Xpx Xpx Xpx Xpx | Separa conteúdo em n linhas, Xpx cada.
+align-items: start; center; end     | Alinhamento vertical de grid items. 'stretch' ocupa todo espaço.
+justify-items: start; center; end   | Alinhamento horizontal dos grid items.
+align-content: space-		    | Alinhamento vertical dos grid content. start, center e end tmb.
+justify-content: space-		    | Alinhamento horizontal dos grid content.
+place-items: start center;	    | Shorthand para align/justify-items.
+place-content: space- end	    | Shorthand para align/justify-content.
+grid-template: Xpx Xpx / 1fr 1fr    | Shorthand para grid-template-rows/columns.
+grid-auto-rows: 100px		    | Novas linhas criadas ou elementos deslocados terão este tamanho.
+grid-auto-columns: 100px	    | Novas colunas criadas ou elementos deslocados terão este tamanho.
+grid-auto-flow: row/column;	    | Novos elementos serão inseridos em nova linha ou coluna.
+
+	Propriedades para Grid-items
+grid-row-start: X;    	      | Define o início da altura de um grid-content.
+grid-row-end: X/-X/span X;    | Define o fim da altura de um grid-content.
+grid-column-start: X; 	      | Define o início da largura de um grid-content.
+grid-column-end: X/-X/span X; | Define o fim da largura de um grid-content.
+grid-row: X/x;		      | Shorthand para grid-row-start/end.
+grid-column: X/x;	      | Shorthand para grid-column-start-end.
+grid-area: rs cs re ce;	      | Shorthand para grid-row-column.

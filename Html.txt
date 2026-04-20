@@ -120,8 +120,8 @@ Em target="", há _blank(abre em nova guia) e self(abre na guia atual).
 	Iframe
 Se o site e navegador permitir, cria um frame(quadro) com site terceiro dentro ou outra página sua. Entre <iframe></>, é exibido caso iframe nao funcione.
 
-frameborder="1"   | Borda de 1px caso 1, sem borda caso 0.
-sandbox="sandbox" | Bloqueia sites terceiros de ações potencialmente perigosas. Vide outras opções
+frameborder="1"   	     | Borda de 1px caso 1, sem borda caso 0.
+sandbox="sandbox" 	     | Bloqueia sites terceiros de ações potencialmente perigosas. Vide outras opções
 referrerpolicy="no-referrer" | Bloqueia de receber dados.
 
 <iframe src="google.com" frameborder="1"> <a href="google.com"> </a> </iframe>
