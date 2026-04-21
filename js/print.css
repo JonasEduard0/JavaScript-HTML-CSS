@@ -1,0 +1,19 @@
+/* Arquivo apenas para responsividade para impressão */
+
+*{
+    margin: 3px;
+}
+
+body{
+    border: 1px black solid;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace !important; /*Força esse comando*/
+}
+
+a, iframe, video, audio{
+    display: none;
+}
+
+#divtxt{
+    overflow:visible;
+}

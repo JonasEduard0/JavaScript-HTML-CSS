@@ -2,7 +2,7 @@
 
 @font-face{ /* Nomeia a fonte baixada */
     src: url(Oswald-VariableFont_wght.ttf);
-    font-family:Oswald;
+    font-family: Oswald;
 }
 
 * { /* Seletor universal do CSS, altera todas tags. */
@@ -513,7 +513,8 @@ h1::first-letter{ /* Pseudo-elemento '::'. Primeira letra alterada */
 }
 
 
-@media (max-width: 759px) { /* Responsivo, se adapta ao tamanho da tela do usuário. */
+/* Responsividade, se adapta ao tamanho da tela do usuário. */
+@media /* (min-width: 0px) and */ (max-width: 759px) { 
     .boxs{
         width: 100px;
     }
@@ -521,22 +522,10 @@ h1::first-letter{ /* Pseudo-elemento '::'. Primeira letra alterada */
         height: 30vh;
     }
 }
-@media (min-width: 100px) and (max-width: 320px){
-    .boxs{
-        width: 25px;
-        height: 60px;
-        font-size: 3em;
-        border-radius: 20%;
-    }
-    .containers{
-        height: 20vh;
-    }
-}
-/* @media (orientation: landscape){  Quando tela deitada nos dispositivos móveis. 
+
+@media (orientation: landscape){ /* Quando tela deitada nos dispositivos móveis. */
     .containers{
         height: 100px;
         background-color: #2f9734;
     }
-} */
-
-
+}
