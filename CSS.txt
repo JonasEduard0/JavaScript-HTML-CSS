@@ -1,5 +1,5 @@
 			CSS
-CSS é o responsável por dar a forma, estilo.
+Cascading Style Sheets é uma linguagem de estilização usada para definir a aparência de páginas web, controlando cores, layouts, fontes e espaçamentos.
 
 
 	Modificações possíveis
@@ -51,19 +51,6 @@ Variáveis locais dentro das tags.
 body{ --corlocal: rgb(29, 27, 27); background-color: var(--corlocal); }
 
 
-	Responsivo
-Adaptar o layout de acordo com a tela do usuário. Celulares, tablets, etc.
-Optar sempre por usar %, vh, vw em width, height, img e container ao invés de px.
-Usar rem ao invés de px para textos.
-| orientation: landscape) | Quando tela deitada nos dispositivos móveis.
-
-@media (min-width: 100px) and (max-width: 320px){
-  .boxs{ width: 25px; height: 20vh; font-size: 3em; border-radius: 20%; } }
-
-@media (orientation: landscape){    
-  .containers{ height: 100px; }
-
-
 	Border
 Há muitas mudanças possíveis. | border: Xcm solid red; |
 
@@ -74,7 +61,7 @@ border-bottom/-top/-left/-right: ...
 	Shorthand
 Simplificar várias propriedades CSS em uma linha.
 
-| a{ border-widht:10px;border=style:solid;border-color:red;}
+| a{ border-widht: 10px; border = style: solid; border-color: red;}
 | a{ border: 10px solid red} | Com Shorthand, tudo direto.
 
 
@@ -374,7 +361,7 @@ animation-timing-function: X; | Velocidade da animação. steps(), linear.
 @keyframes trocaCor{ 0%{background-color: red;} 100%{background-color: purple; } }
 
 
-	Grid
+		Grid
 Grades, uma alternativa de organização do layout ao flexbox. Importante envolver em container.
 Usar a ferramenta do grid view no 'inspecionar elemento'.
 
@@ -417,3 +404,15 @@ grid-column-end: X/-X/span X; | Define o fim da largura de um grid-content.
 grid-row: X/x;		      | Shorthand para grid-row-start/end.
 grid-column: X/x;	      | Shorthand para grid-column-start-end.
 grid-area: rs cs re ce;	      | Shorthand para grid-row-column.
+
+
+		Media Queries e Responsividade
+Adaptar o layout de acordo com a tela do usuário. Celulares, tablets, etc.
+Optar sempre por usar %, vh, vw em width, height, img e container ao invés de px.
+Usar rem ao invés de px para textos.
+
+<link rel="stylesheet" href="print.css" media="print">  | Criar CSS responsivo só para impressora, se tira links e botões.
+
+@media (orientation: landscape) { ... } 		| Quando tela deitada nos dispositivos móveis.
+
+@media (min-width: 100px) and (max-width: 320px){ ... } | Se adapta ao tamanho da tela do usuário.

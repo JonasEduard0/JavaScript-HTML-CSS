@@ -1,6 +1,5 @@
 			HTML
-HTML = conteúdo das páginas, semântica. Linguagem de Marcação de Hipertexto.
-Pode usar style dentro de tags para modificar background, color, etc.
+HyperText Markup Language (Linguagem de Marcação de Hipertexto) é a linguagem padrão para estruturar e organizar o conteúdo de páginas web, como textos, imagens e links.
 
 <!DOCTYPE html>    	 | Tipo de linguagem.
 <html lang="pt-br">	 | Língua do site.
