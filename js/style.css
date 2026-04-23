@@ -514,7 +514,7 @@ h1::first-letter{ /* Pseudo-elemento '::'. Primeira letra alterada */
 
 
 /* Responsividade, se adapta ao tamanho da tela do usuário. */
-@media /* (min-width: 0px) and */ (max-width: 759px) { 
+@media /* (min-width: 0px) and */ (min-width: 759px) { 
     .boxs{
         width: 100px;
     }

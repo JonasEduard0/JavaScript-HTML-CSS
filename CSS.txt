@@ -1,5 +1,6 @@
 			CSS
 Cascading Style Sheets é uma linguagem de estilização usada para definir a aparência de páginas web, controlando cores, layouts, fontes e espaçamentos.
+Mobile First: começar fazendo sites primeiro para celulares, depois adaptar com Media Queries Breakpoints. 
 
 
 	Modificações possíveis
@@ -11,7 +12,7 @@ text-transform        | Transforma texto em maiúsculo/minúsculo.
 line-height 	      | Espaçamento entre linhas.
 width 		      | Largura do elemento.
 height 		      | Altura do elemento.
-min/max-height/widht  | Altura minima/maxima que um elemeto pode/deve ter.
+min/max-height/widht  | Altura mínima/máxima que um elemento pode/deve ter.
 top/left/right/bottom | Distância em relação ao extremo desse lado.
 outline 	      | Contorno fora da borda.
 display: flow-root;   | Img não fica fora da borda do body.
@@ -416,3 +417,15 @@ Usar rem ao invés de px para textos.
 @media (orientation: landscape) { ... } 		| Quando tela deitada nos dispositivos móveis.
 
 @media (min-width: 100px) and (max-width: 320px){ ... } | Se adapta ao tamanho da tela do usuário.
+
+
+	Typical Device Breakpoints
+Breakpoint não é sobre dispositivo, é sobre quando o layout quebra. Responsividade moderna depende mais de Flexbox, Grid e unidades fluidas. Normalmente, se faz Breakpoints para min-width de 768, 1024 e 1200px
+
+Mobile: até 480px → celulares pequenos, 481 - 767px → celulares maiores. Layout em coluna única e menus simplificados.
+
+Tablet (ou mobile grande): 768–1023px. Grid de 2 colunas.
+
+Desktop: 1024 – 1279px → laptops, 1280 – 1439px → desktop padrão, 1440px+ → telas grandes. Layout completo.
+
+Ultra wide: 1600px+ / 1920px+. Limitar largura.
