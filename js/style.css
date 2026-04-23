@@ -514,7 +514,14 @@ h1::first-letter{ /* Pseudo-elemento '::'. Primeira letra alterada */
 
 
 /* Responsividade, se adapta ao tamanho da tela do usuário. */
-@media /* (min-width: 0px) and */ (min-width: 759px) { 
+@media (orientation: landscape){ /* Quando tela deitada nos dispositivos móveis. */
+    .containers{
+        height: 100px;
+        background-color: #2f9734;
+    }
+}
+
+@media /* (min-width: 0px) and */ (min-width: 768px) { /* Tablets */
     .boxs{
         width: 100px;
     }
@@ -522,10 +529,19 @@ h1::first-letter{ /* Pseudo-elemento '::'. Primeira letra alterada */
         height: 30vh;
     }
 }
-
-@media (orientation: landscape){ /* Quando tela deitada nos dispositivos móveis. */
+@media (min-width: 1024px) { /* Laptops */
+    .boxs{
+        width: 150px;
+    }
     .containers{
-        height: 100px;
-        background-color: #2f9734;
+        height: 35vh;
+    }
+}
+@media screen and (min-width:1200px) { /* Desktop padrão */
+    .boxs{
+        width: 190px;
+    }
+    .containers{
+        height: 38vh;
     }
 }
