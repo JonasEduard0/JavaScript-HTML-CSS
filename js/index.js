@@ -9,7 +9,7 @@ console.log(`Você tem ${idade} anos.`); // Printa substituindo ${} pela variave
 console.log(typeof idade);
 
 
-let usuario;
-document.getElementById("submitar").onclick = function(){
-    usuario = document.getElementById("usuario").value;
+document.getElementById("botaojs").onclick = function(){ //Quando clica no botão, função ativa
+    let nome = document.getElementById("textojs").value; 
+    document.getElementById("pjs").textContent = `Ola, ${nome}`;
 }
