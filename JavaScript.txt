@@ -4,13 +4,13 @@ Comentários com // ou /* */.
 
 
 	Saída de dados
-let variavel = prompt("Digite:");   | Pede um valor ao usuário e guarda.
+const CONSTANTE = prompt("Digite:"); | Pede um valor ao usuário e guarda. Constantes em UpperCase.
 
-let variável = confirm("Confirme"); | Pergunta com 'OK' e 'Cancelar'.
+let variavel = confirm("Confirme");  | Pergunta com 'OK' e 'Cancelar'.
 
-console.log("Printa texto");	    | Exibe texto no console.
+console.log("Printa texto");	     | Exibe texto no console.
 
-window.alert("Alerta"); 	    | Exibe a Janela de Alerta com o texto quando entra no site.
+window.alert("Alerta"); 	     | Exibe a Janela de Alerta com o texto quando entra no site.
 
 
 	Eventos
@@ -25,5 +25,19 @@ DOM é a forma que o JavaScript usa para acessar o HTML.
 
 document.getElementBy...('identificador'); | Pega o elemento com esse Id/ClassName/Name/TagName.
 
-document.getElementById('p1').textContent = "P alterado com textContent."; | Altera o texto do <p> de id .p1
+document.getElementById('p1').textContent = "P alterado com textContent."; | Altera o texto do <p> de id '.p1'
 
+
+	Conversão de dados
+let n = window.prompt("Digite um numero: "); | Pensa que é string.
+n = Number(n) ou Boolean(n) ou String(n);    | Transforma variável nesse tipo.
+
+
+	Web APIs
+Math: .PI | .random() | .floor(4.9) | .ceil(4.1) | .round(4.5) | .min(1, 5, 10) | .pow(2, 3) | .sqrt(16)
+
+String: nome.length | .toUpperCase() | .toLowerCase() | .includes("J") | .slice(0, 3) | .replace("Jonas", "Eduardo")
+
+Array: lista.push(4) | .pop() | .shift() | .unshift(0) | .includes(2) | .indexOf(3)
+
+Date: let data = new Date(); data.getFullYear() | .getMonth() | .getDate() | .getHours()
