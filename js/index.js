@@ -15,9 +15,33 @@ document.getElementById("botaojs").onclick = function(){ //Quando clica no botã
 }
 
 
-let numero  = window.prompt("Digite um numero: "); // Pensa que é string.
+/* let numero  = window.prompt("Digite um numero: "); // Pensa que é string.
 numero = Number(numero); // Transforma outros tipos em número.
 numero += Math.round(Math.PI); 
-console.log(numero);
+console.log(numero); */
 
 
+document.getElementById("botaojs").onclick = function(){
+    let masculino = document.getElementById("Masculino").checked; // true ou false.
+    let feminino = document.getElementById("Feminino").checked;
+    let humano = document.getElementById("humano");        // verifica se está marcado.
+
+    if(masculino && humano.checked) {
+        console.log("Humano Masculino");
+    } else if(feminino && humano.checked) {
+        console.log("Humano Feminino");
+    } else{
+        console.log("Selecione humano e sexo");
+    }
+
+    humano.checked = false; // Desmarca o checkbox.
+}
+
+
+const eu = "Jonas Eduardo";
+let primeiroNome = eu.slice(0, eu.indexOf(" ")); // Pega texto do inicio ao espaço.
+
+
+const num = 17;
+num === "17" ? console.log("Mesmo valor e tipo") : console.log("Tipo diferente");
+num !== "17" ? console.log("Nao e mesmo valor e tipo") : console.log("Mesmo valor e tipo");

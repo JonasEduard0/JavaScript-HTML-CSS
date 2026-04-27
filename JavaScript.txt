@@ -27,6 +27,10 @@ document.getElementBy...('identificador'); | Pega o elemento com esse Id/ClassNa
 
 document.getElementById('p1').textContent = "P alterado com textContent."; | Altera o texto do <p> de id '.p1'
 
+.checked 	 | Usado em input type checkbox e radio. Retorna true se está marcado ou false.
+
+.checked = true; | Marca o checkbox via JS
+
 
 	Conversão de dados
 let n = window.prompt("Digite um numero: "); | Pensa que é string.
@@ -36,8 +40,11 @@ n = Number(n) ou Boolean(n) ou String(n);    | Transforma variável nesse tipo.
 	Web APIs
 Math: .PI | .random() | .floor(4.9) | .ceil(4.1) | .round(4.5) | .min(1, 5, 10) | .pow(2, 3) | .sqrt(16)
 
-String: nome.length | .toUpperCase() | .toLowerCase() | .includes("J") | .slice(0, 3) | .replace("Jonas", "Eduardo")
+String: nome.length | .toUpperCase() | .toLowerCase() | .includes("J") | .replace("Jonas", "Eduardo") | etc...
 
 Array: lista.push(4) | .pop() | .shift() | .unshift(0) | .includes(2) | .indexOf(3)
 
 Date: let data = new Date(); data.getFullYear() | .getMonth() | .getDate() | .getHours()
+
+
+	

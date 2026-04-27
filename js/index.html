@@ -184,7 +184,7 @@
 
     <nav>
         <a target="_self" href="https://www.google.com/">
-            <button id="botao" ondblclick="alert('Clicou!')"style="border:1px solid red; border-radius:44%"> 
+            <button id="botao" style="border:1px solid red; border-radius:44%"> 
                 Botão 
             </button>
         </a>
@@ -231,9 +231,9 @@
             </select> <br>
 
             <label for="sexo"> Sexo: </label>
-            <input type="checkbox" name="sexo" class="sexo">
+            <input type="checkbox" name="sexoM" class="sexo">
             <label for="homem">Homem</label>
-            <input type="checkbox" name="sexo" class="sexo">
+            <input type="checkbox" name="sexoF" class="sexo">
             <label for="mulher">Mulher</label> <br>
 
             <label for="comentar">Comente: naruto é ruim de+++</label>
@@ -293,7 +293,7 @@
 
 
     <div class="paginacao">
-        <a href="index.html"><</a><!--Como estamos na 1ª,recarrega pag ou passa pra ultima-->
+        <a href="index.html"></a><!--Como estamos na 1ª,recarrega pag ou passa pra ultima-->
         <a href="index.html" class="paginatual"> 1 </a>
         <a href="pagina2.html"> 2 </a> <!--Quando fazer a proxima pagina, altera paginatual-->
         <a href="pagina3.html"> 3 </a>
@@ -369,8 +369,11 @@
 
 
     <p id="pjs">Digite seu nome</p>
-    <input type="text" id="textojs">
-    <input type="submit" id="botaojs"> <hr>
+    <input type="text" id="textojs"> <br>
+    <input type="checkbox" id="Masculino"> Masculino
+    <input type="checkbox" id="Feminino"> Feminino <br>
+    <input type="radio" id="humano"> Ser Humano <br>
+    <input type="submit" id="botaojs" value="Enviar"> <hr>
 
 
     <script src="index.js"></script> <!-- Linka com .js, deve por no final -->
