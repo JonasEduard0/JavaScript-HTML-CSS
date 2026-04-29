@@ -78,3 +78,10 @@ let Spread = [1, 2, 3];
 console.log(...Spread);    // Printa separadamente, sem colchetes ou vírgulas.
 
 
+// Callback: função passada como argumento para outra, que é executada depois.
+function saudacao(nome, callback) {
+    console.log(`Ola, ${nome}`);
+    callback(); // Chama a função q é executada após o console.log
+}
+
+

@@ -70,3 +70,7 @@ Rest("Uva", "Melancia", "Laranja"); 		 | Passa 3 argumentos, que serão um array
 		Spread Operator
 let Spread = [1, 2, 3];
 console.log(...Spread); | Printa separadamente, sem colchetes ou vírgulas.
+
+
+		Callback
+Função passada como argumento para outra função, para ser executada depois.
