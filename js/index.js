@@ -68,7 +68,6 @@ frutas.forEach(element => { // Para cada elemento do array, faça:
 let novaFruta = [... frutas, "Pera"]; // Cria novo array com elementos de Frutas + "Pera".
 let novoNome = [... "Jonas"];         // Cria array com cada letra do nome como elemento.
 
-
 function Rest(...frutas) { // Recebe quantidade variavel de argumentos.
     console.log(frutas)    // Printa o array de argumentos.
 }
@@ -79,9 +78,22 @@ console.log(...Spread);    // Printa separadamente, sem colchetes ou vírgulas.
 
 
 // Callback: função passada como argumento para outra, que é executada depois.
-function saudacao(nome, callback) {
+function saudacao(nome, pessoa) {
     console.log(`Ola, ${nome}`);
-    callback(); // Chama a função q é executada após o console.log
+    pessoa(); // Chama a função q é executada após o console.log
 }
 
+saudacao("Jonas", () => pessoa("Eduardo", 25)); // Passa função anônima como callback.
 
+
+let nums = [5, 2, 9, 1]
+
+let maior = nums.reduce((acc, valor) => {
+    if (valor > acc) {
+        return valor;
+    } else {
+        return acc;
+    }
+}); // Reduce reduz o array a um único valor, usando a função fornecida para comparar os elementos.
+
+console.log(maior);

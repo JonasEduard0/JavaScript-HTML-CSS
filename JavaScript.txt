@@ -48,23 +48,27 @@ Date: let data = new Date(); data.getFullYear() | .getMonth() | .getDate() | .ge
 		Array
 let frutas = ["Banana", "Maçã", "Laranja"];
 
-frutas.push("x")      | Adiciona o elemento no FINAL do array. Retorna o novo tamanho.
-frutas.pop()          | Remove o último elemento do array. Retorna o elemento removido.
-frutas.shift()        | Remove o primeiro elemento do array. Retorna o elemento removido.
-frutas.unshift(2)     | Adiciona elemento no início do array. Retorna o novo tamanho.
-frutas.map(x=>x*2)    | Cria novo array aplicando a função em cada elemento (não altera o original).
-frutas.filter(x=>x>1) | Cria novo array com elementos que passam na condição (true).
+frutas.push("x")      	| Adiciona o elemento no FINAL do array. Retorna o novo tamanho.
+.pop()          	| Remove o último elemento do array. Retorna o elemento removido.
+.shift()        	| Remove o primeiro elemento do array. Retorna o elemento removido.
+.unshift(2)     	| Adiciona elemento no início do array. Retorna o novo tamanho.
+.map(x=>x*2)    	| Cria novo array aplicando a função em cada elemento (não altera o original).
+.filter(x=>x>1) 	| Cria novo array com elementos que passam na condição (true).
+.reduce((x,y) => {...}) | Reduz o array a um único valor, usando a função fornecida para comparar elementos.
 
 let novaFruta = [... frutas, "Pera"]; | Cria novo array com elementos de Frutas + "Pera".
 let novoNome  = [... "Jonas"];        | Cria array com cada letra do nome como elemento.
 
 
 		Função
-function pessoa(nome, idade) { return console.log(`Ola, ${nome}, de ${idade} anos.`); }
+function pessoa(nome, idade) { return console.log(`Olá, ${nome}, de ${idade} anos.`); }
 Pode não ter parâmetros, mas não terá argumentos. return nesse caso opcional. Quando tem, a função para quando chegar nele.
 
 function Rest(...frutas) { console.log(frutas) } | Recebe quantidade variável de argumentos, Printa o array de argumentos.
 Rest("Uva", "Melancia", "Laranja"); 		 | Passa 3 argumentos, que serão um array dentro da função.
+
+const ola = function() { console.log("Ola") } | É possível usar função como variáveis ou valores.
+const quadrado = numero.map( function(elemento) { return math.pow(elemento,2);});
 
 
 		Spread Operator
@@ -74,3 +78,6 @@ console.log(...Spread); | Printa separadamente, sem colchetes ou vírgulas.
 
 		Callback
 Função passada como argumento para outra função, para ser executada depois.
+
+function saudacao(nome, pessoa){ console.log(`Ola, ${nome}`); pessoa(); } | Chama a função q é executada após o console.log
+saudacao("Jonas", () => pessoa("Eduardo", 25)); 			  | Passa função anônima como callback.
