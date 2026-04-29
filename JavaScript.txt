@@ -1,9 +1,9 @@
-		JavaScript
+			JavaScript
 Linguagem de programação interpretada, de alto nível e multiparadigma.
 Comentários com // ou /* */.
 
 
-	Saída de dados
+		Saída de dados
 const CONSTANTE = prompt("Digite:"); | Pede um valor ao usuário e guarda. Constantes em UpperCase.
 
 let variavel = confirm("Confirme");  | Pergunta com 'OK' e 'Cancelar'.
@@ -13,14 +13,14 @@ console.log("Printa texto");	     | Exibe texto no console.
 window.alert("Alerta"); 	     | Exibe a Janela de Alerta com o texto quando entra no site.
 
 
-	Eventos
+		Eventos
 Eventos acontecem quando o usuário interage com a página.
 
 | <button onclick="clicou()">Clique aqui</button>
   <script> function clicou() { alert("Botão clicado"); } </script>
 
 
-	DOM
+		DOM
 DOM é a forma que o JavaScript usa para acessar o HTML.
 
 document.getElementBy...('identificador'); | Pega o elemento com esse Id/ClassName/Name/TagName.
@@ -32,19 +32,41 @@ document.getElementById('p1').textContent = "P alterado com textContent."; | Alt
 .checked = true; | Marca o checkbox via JS
 
 
-	Conversão de dados
+		Conversão de dados
 let n = window.prompt("Digite um numero: "); | Pensa que é string.
 n = Number(n) ou Boolean(n) ou String(n);    | Transforma variável nesse tipo.
 
 
-	Web APIs
+		Web APIs
 Math: .PI | .random() | .floor(4.9) | .ceil(4.1) | .round(4.5) | .min(1, 5, 10) | .pow(2, 3) | .sqrt(16)
 
-String: nome.length | .toUpperCase() | .toLowerCase() | .includes("J") | .replace("Jonas", "Eduardo") | etc...
-
-Array: lista.push(4) | .pop() | .shift() | .unshift(0) | .includes(2) | .indexOf(3)
+String: nome.length | .toUpperCase() | .slice() | .includes("J") | .replace("Jonas", "Eduardo") | etc...
 
 Date: let data = new Date(); data.getFullYear() | .getMonth() | .getDate() | .getHours()
 
 
-	
+		Array
+let frutas = ["Banana", "Maçã", "Laranja"];
+
+frutas.push("x")      | Adiciona o elemento no FINAL do array. Retorna o novo tamanho.
+frutas.pop()          | Remove o último elemento do array. Retorna o elemento removido.
+frutas.shift()        | Remove o primeiro elemento do array. Retorna o elemento removido.
+frutas.unshift(2)     | Adiciona elemento no início do array. Retorna o novo tamanho.
+frutas.map(x=>x*2)    | Cria novo array aplicando a função em cada elemento (não altera o original).
+frutas.filter(x=>x>1) | Cria novo array com elementos que passam na condição (true).
+
+let novaFruta = [... frutas, "Pera"]; | Cria novo array com elementos de Frutas + "Pera".
+let novoNome  = [... "Jonas"];        | Cria array com cada letra do nome como elemento.
+
+
+		Função
+function pessoa(nome, idade) { return console.log(`Ola, ${nome}, de ${idade} anos.`); }
+Pode não ter parâmetros, mas não terá argumentos. return nesse caso opcional. Quando tem, a função para quando chegar nele.
+
+function Rest(...frutas) { console.log(frutas) } | Recebe quantidade variável de argumentos, Printa o array de argumentos.
+Rest("Uva", "Melancia", "Laranja"); 		 | Passa 3 argumentos, que serão um array dentro da função.
+
+
+		Spread Operator
+let Spread = [1, 2, 3];
+console.log(...Spread); | Printa separadamente, sem colchetes ou vírgulas.

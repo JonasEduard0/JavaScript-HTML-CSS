@@ -45,3 +45,36 @@ let primeiroNome = eu.slice(0, eu.indexOf(" ")); // Pega texto do inicio ao espa
 const num = 17;
 num === "17" ? console.log("Mesmo valor e tipo") : console.log("Tipo diferente");
 num !== "17" ? console.log("Nao e mesmo valor e tipo") : console.log("Mesmo valor e tipo");
+
+
+function pessoa(nome, idade) { //Pode ñ ter parâmetros, mas não terá argumentos.
+    return console.log(`Ola, ${nome}, de ${idade} anos.`);
+} //return nesse caso opcional. Quando tem, a função para quando chegar nele.
+
+
+let frutas = ["Banana", "Maçã", "Laranja"];
+frutas.push("Uva");             // Adiciona elemento no final do array.
+frutas.unshift("Abacaxi");      // Adiciona elemento no início.
+frutas.pop();                   // Remove o último elemento do array.
+frutas.shift();                 // Remove o primeiro elemento.
+frutas.map(x=>x+"s");           // Adiciona 's' a cada elemento, não altera o original.
+frutas.filter(x=>x.length > 5); // Retorna um novo array com elementos com mais de 5 letras.
+
+frutas.forEach(element => { // Para cada elemento do array, faça:
+    console.log(element);
+});
+
+
+let novaFruta = [... frutas, "Pera"]; // Cria novo array com elementos de Frutas + "Pera".
+let novoNome = [... "Jonas"];         // Cria array com cada letra do nome como elemento.
+
+
+function Rest(...frutas) { // Recebe quantidade variavel de argumentos.
+    console.log(frutas)    // Printa o array de argumentos.
+}
+Rest("Uva", "Melancia", "Laranja"); // Passa 3 argumentos, que serão um array dentro da função.
+
+let Spread = [1, 2, 3];
+console.log(...Spread);    // Printa separadamente, sem colchetes ou vírgulas.
+
+
